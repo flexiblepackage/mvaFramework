@@ -88,68 +88,6 @@ namespace MVAFW.Gpib
 
         #endregion
 
-        #region AP 2700
-        internal void devAP2700OutputFrequency(double frequency, double vpp)
-        {
-            AP.GlobalClass APObj = new AP.GlobalClass();
-
-            APObj.Gen().Output = true;
-            APObj.Gen().FreqAccuracy = 1;        //High ACC.
-            APObj.Gen().set_ChAAmpl("Vpp", vpp); //Amplitude 
-            APObj.Gen().set_ChAFreq("Hz", frequency); //Frequency
-            APObj.Gen().Config = 3;              //Unbalance Ground
-            //APObj.Gen().Config = 1;              //Balance Ground
-
-            Thread.Sleep(1000);
-        }
-
-        internal void devAP2700OutputFrequency(double frequency, double vpp, MvaInstrumentController.APOutputConfig output_config)
-        {
-            AP.GlobalClass APObj = new AP.GlobalClass();
-
-            APObj.Gen().Output = true;
-            APObj.Gen().FreqAccuracy = 1;        //High ACC.
-            APObj.Gen().set_ChAAmpl("Vpp", vpp); //Amplitude 
-            APObj.Gen().set_ChAFreq("Hz", frequency); //Frequency
-            APObj.Gen().Config = (short)(int)output_config; //Blance GND
-
-            Thread.Sleep(1000);
-        }
-
-        internal void devAP2700_AI_THDN(out double Freq_A, out double Freq_B, out double AMP_A, out double AMP_B, out double THDN_A, out double THDN_B)
-        {
-            AP.GlobalClass APObj = new AP.GlobalClass();
-
-            APObj.Anlr().FuncMode = 4; // function mode --> "THD+N" 
-            APObj.Anlr().FuncDetector = 0; // function detector --> "RMS" 
-
-            APObj.Anlr().FuncInput = 0; // switch to channel A
-            Thread.Sleep(3000);
-            Freq_A = APObj.Anlr().get_ChAFreqRdg("Hz");
-            THDN_A = APObj.Anlr().get_FuncRdg("dB");
-
-            APObj.Anlr().FuncInput = 1; // switch to channel B
-            Thread.Sleep(2000);
-            Freq_B = APObj.Anlr().get_ChBFreqRdg("Hz");
-            THDN_B = APObj.Anlr().get_FuncRdg("dB");
-
-            APObj.Anlr().FuncMode = 0; // function mode --> "Amplitude" 
-            APObj.Anlr().FuncDetector = 2; // function detector --> "Peak" 
-
-            APObj.Anlr().FuncInput = 0; // switch to channel A
-            Thread.Sleep(1000);
-            AMP_A = APObj.Anlr().get_FuncRdg("V");
-
-            APObj.Anlr().FuncInput = 1; // switch to channel B
-            Thread.Sleep(1000);
-            AMP_B = APObj.Anlr().get_FuncRdg("V");
-
-            Thread.Sleep(1000);
-        }
-
-
-        #endregion
-
         #region Agilent DMM 34410
         internal double dev33410Meas(ushort deviceNum, ushort gpibNum, MvaInstrumentController.DmmMeasType measType, uint nplc)
         {
