@@ -228,11 +228,9 @@
     <Compile Include="Analysis\FFT2.cs" />
     <Compile Include="Analysis\FFT.cs" />
     <Compile Include="API\Header\Adgpib.cs" />
-    <Compile Include="API\Header\agvisa32.cs" />
     <Compile Include="API\Header\WaitSingleObject.cs" />
     <Compile Include="API\Header\RestClient.cs" />
     <Compile Include="API\Header\visa32.cs" />
-    <Compile Include="API\Header\VisaConnect.cs" />
     <Compile Include="API\MVAAndroidAPI\AndroidAPI.cs" />
     <Compile Include="API\MVAAndroidAPI\AndroidAPIMyQ.cs" />
     <Compile Include="API\MVAAndroidAPI\AndroidAPITend.cs" />
@@ -243,7 +241,6 @@
     <Compile Include="API\MVAUAPI.cs" />
     <Compile Include="API\MVAUartAPI.cs" />
     <Compile Include="API\MVAWebAPI\WebAPI.cs" />
-    <Compile Include="Apx515\Apx515.cs" />
     <Compile Include="Common\Entity\eMvaCollection.cs" />
     <Compile Include="Common\Entity\eProductSetting.cs" />
     <Compile Include="Common\Entity\eTestItemManage.cs" />
@@ -322,7 +319,6 @@
   <ItemGroup>
     <Content Include="bin\Debug\MVAFW.dll" />
     <Content Include="bin\Debug\MVAFW.pdb" />
-    <Content Include="dll\System.Data.SQLite.dll" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SettingForm\ChannelSetting.resx">
@@ -354,7 +350,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="dll\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

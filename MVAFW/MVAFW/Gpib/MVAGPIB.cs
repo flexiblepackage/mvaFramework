@@ -6,7 +6,7 @@ using System.IO.Ports;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Ivi.Visa.Interop;
+
 
 using MVAFW.API;
 //using M1909A;
@@ -858,67 +858,6 @@ namespace MVAFW.Gpib
             return 0;
         }
 
-        internal double dev53220ReadTimeIntervalX_X(int ch, int slop1, int slop2, double threshold,double holdtime)
-        {
-
-            double counterRead = 0;
-            VISA_Connect oConnect = new VISA_Connect();
-            string strDUT_address = "USB0::0x0957::0x1807::MY50000479::0::INSTR";
-            string connect = oConnect.ConnectInstr(strDUT_address);
-            if (connect == "Connected")
-            {
-                
-                // Configures for time interval at Chx. 
-                oConnect.SendSLICCmd(("CONF:TINT (@" + ch.ToString() + ")"));
-                //Config to DC coupling and the same threshod for slop1,2
-                oConnect.SendSLICCmd("INP" + ch.ToString() + ":COUP DC");
-                oConnect.SendSLICCmd("INP" + ch.ToString() + ":LEV1 " + threshold.ToString());
-                oConnect.SendSLICCmd("INP" + ch.ToString() + ":LEV2 " + threshold.ToString());
-
-                //Slop Setting
-                if (slop1 == 0)
-                {
-                    oConnect.SendSLICCmd("INP" + ch.ToString() + ":SLOP1 POS");
-                }
-                else
-                {
-                    oConnect.SendSLICCmd("INP" + ch.ToString() + ":SLOP1 NEG");
-                }
-
-                if (slop2 == 0)
-                {
-                    oConnect.SendSLICCmd("INP" + ch.ToString() + ":SLOP2 POS");
-                }
-                else
-                {
-                    oConnect.SendSLICCmd("INP" + ch.ToString() + ":SLOP2 NEG");
-                }
-
-                oConnect.SendSLICCmd("SENS:TINT:GATE:SOUR ADV");
-                oConnect.SendSLICCmd("SENS:GATE:STAR:SOUR IMM");
-                oConnect.SendSLICCmd("SENS:GATE:STOP:SOUR IMM");
-                oConnect.SendSLICCmd("SENS:GATE:STOP:HOLD:SOUR EVEN");
-                oConnect.SendSLICCmd("SENS:GATE:STOP:HOLD:EVEN  1");
-                //Config hold time
-                oConnect.SendSLICCmd("SENS:GATE:STOP:HOLD:TIME " + holdtime.ToString());
-                //Read data
-                string str = oConnect.QueryString("READ?");
-
-                if (str == "VI_ERROR_TMO: A timeout occurred")
-                {
-                    counterRead = -1;
-                    oConnect.SendSLICCmd("*RST");
-                }
-                else
-                {
-                    counterRead = double.Parse(str.ToString());
-                }
-
-                return counterRead;
-            }
-
-            return counterRead;
-        }
 
         internal double dev53220ReadFrequency(ushort deviceNum, ushort gpibNum)
         {
