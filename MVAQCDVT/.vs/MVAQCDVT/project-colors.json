@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9cff8878-e839-4b2d-b8c3-54ea5823a8e7": {
+      "ProjectGuid": "9cff8878-e839-4b2d-b8c3-54ea5823a8e7",
+      "DisplayName": "MVAFW",
+      "ColorIndex": 0
+    },
+    "a4acf85c-6086-42bc-9bb0-f37f0e5ce9ce": {
+      "ProjectGuid": "a4acf85c-6086-42bc-9bb0-f37f0e5ce9ce",
+      "DisplayName": "MVAQCDVT",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

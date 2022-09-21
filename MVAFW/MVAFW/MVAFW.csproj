@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CFF8878-E839-4B2D-B8C3-54EA5823A8E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVAFW</RootNamespace>
+    <AssemblyName>MVAFW</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;x86</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Agilent.Agilent33250.Interop, Version=1.2.2.0, Culture=neutral, PublicKeyToken=ced78d295d1e0f2b, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>dll\Agilent.Agilent33250.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Agilent.TMFramework.InstrumentIO, Version=2.1.8910.0, Culture=neutral, PublicKeyToken=7a01cdb2a9131f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Agilent.TMFramework.InstrumentIO.dll</HintPath>
+    </Reference>
+    <Reference Include="Alchemy">
+      <HintPath>dll\Alchemy.dll</HintPath>
+    </Reference>
+    <Reference Include="Appium.Net, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Appium.WebDriver.4.3.1\lib\net45\Appium.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="AudioPrecision.API, Version=3.4.0.0, Culture=neutral, PublicKeyToken=756ddf07b6e97975, processorArchitecture=MSIL">
+      <HintPath>dll\AudioPrecision.API.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AudioPrecision.API.5.0, Version=5.0.0.0, Culture=neutral, PublicKeyToken=756ddf07b6e97975, processorArchitecture=MSIL">
+      <HintPath>dll\AudioPrecision.API.5.0.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Aliases>APXLIBv5</Aliases>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FFmpeg.AutoGen, Version=4.4.1.1, Culture=neutral, PublicKeyToken=9b7632533a381715, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\FFmpeg.AutoGen.4.4.1.1\lib\net472\FFmpeg.AutoGen.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AP">
+      <HintPath>dll\Interop.AP.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ivi.Driver.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>dll\Ivi.Driver.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Fgen.Interop, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>dll\Ivi.Fgen.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Visa.Interop, Version=5.5.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>dll\Ivi.Visa.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Common">
+      <HintPath>dll\NationalInstruments.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.DAQmx">
+      <HintPath>dll\NationalInstruments.DAQmx.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\NAudio.2.0.1\lib\netstandard2.0\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\NAudio.Asio.2.0.0\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\NAudio.Core.2.0.0\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\NAudio.Midi.2.0.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\NAudio.Wasapi.2.0.0\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\NAudio.WinForms.2.0.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\NAudio.WinMM.2.0.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.13.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\RestSharp.106.13.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Selenium.RC.3.1.0\lib\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\MVAQCDVT\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\analysis.cs" />
+    <Compile Include="Analysis\CsConvert.cs" />
+    <Compile Include="Analysis\Dynamic2.cs" />
+    <Compile Include="Analysis\Dynamic.cs" />
+    <Compile Include="Analysis\FFT2.cs" />
+    <Compile Include="Analysis\FFT.cs" />
+    <Compile Include="API\Header\Adgpib.cs" />
+    <Compile Include="API\Header\agvisa32.cs" />
+    <Compile Include="API\Header\WaitSingleObject.cs" />
+    <Compile Include="API\Header\RestClient.cs" />
+    <Compile Include="API\Header\visa32.cs" />
+    <Compile Include="API\Header\VisaConnect.cs" />
+    <Compile Include="API\MVAAndroidAPI\AndroidAPI.cs" />
+    <Compile Include="API\MVAAndroidAPI\AndroidAPIMyQ.cs" />
+    <Compile Include="API\MVAAndroidAPI\AndroidAPITend.cs" />
+    <Compile Include="API\MVAAndroidAPI\MVAMyQAPI\MyQAPIFalcon.cs" />
+    <Compile Include="API\MVAAndroidAPI\MVAMyQAPI\MyQAPIWS.cs" />
+    <Compile Include="API\MVADASKAPI.cs" />
+    <Compile Include="API\MvaInstrumentController.cs" />
+    <Compile Include="API\MVAUAPI.cs" />
+    <Compile Include="API\MVAUartAPI.cs" />
+    <Compile Include="API\MVAWebAPI\WebAPI.cs" />
+    <Compile Include="Apx515\Apx515.cs" />
+    <Compile Include="Common\Entity\eMvaCollection.cs" />
+    <Compile Include="Common\Entity\eProductSetting.cs" />
+    <Compile Include="Common\Entity\eTestItemManage.cs" />
+    <Compile Include="Common\Entity\eTestItemResult.cs" />
+    <Compile Include="Common\Entity\eTestItemSetting.cs" />
+    <Compile Include="Common\Output\oProductSetting.cs" />
+    <Compile Include="Common\Output\oTestItemManage.cs" />
+    <Compile Include="Common\Output\oTestItemResult.cs" />
+    <Compile Include="Common\Output\oTestItemSetting.cs" />
+    <Compile Include="Config\TurfOffType.cs" />
+    <Compile Include="DB\MvaDBDataFetcher.cs" />
+    <Compile Include="DB\MvaDSMain.cs" />
+    <Compile Include="DB\MvaDSManager.cs" />
+    <Compile Include="DB\MvaSQLDataFetcher.cs" />
+    <Compile Include="Config\CompareType.cs" />
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Config\Error.cs" />
+    <Compile Include="Config\TestResult.cs" />
+    <Compile Include="Gpib\MVAGPIB.cs" />
+    <Compile Include="MvaGlobalManager.cs" />
+    <Compile Include="SettingForm\ChannelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm\ChannelSetting.Designer.cs">
+      <DependentUpon>ChannelSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForm\InputBox.cs" />
+    <Compile Include="SettingForm\TestItemSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm\TestItemSelection.Designer.cs">
+      <DependentUpon>TestItemSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestItemColls\AIOTestItem.cs" />
+    <Compile Include="TestItemColls\AITestItem.cs" />
+    <Compile Include="TestItemColls\Android\AndroidTestItem.cs" />
+    <Compile Include="TestItemColls\Android\App\AppTestItem.cs" />
+    <Compile Include="TestItemColls\Android\App\Template\Deletion.cs" />
+    <Compile Include="TestItemColls\Android\App\Template\Provision.cs" />
+    <Compile Include="TestItemColls\AOTestItem.cs" />
+    <Compile Include="TestItemColls\Camera\Utility\FilterLog.cs" />
+    <Compile Include="TestItemColls\Camera\Utility\UartLog.cs" />
+    <Compile Include="TestItemColls\Camera\Utility\UartLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestItemColls\Camera\Utility\UartLogForm.Designer.cs">
+      <DependentUpon>UartLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestItemColls\Camera\Web\iSecurity.cs" />
+    <Compile Include="TestItemColls\DAQFuncAttribute.cs" />
+    <Compile Include="TestItemColls\ExeExitCode.cs" />
+    <Compile Include="TestItemColls\GenericCopier.cs" />
+    <Compile Include="TestItemColls\UartTestItem.cs" />
+    <Compile Include="TestItemColls\BasicTestItem.cs" />
+    <Compile Include="TestItemColls\batexe.cs" />
+    <Compile Include="TestItemColls\Camera\Utility\ESP8266.cs" />
+    <Compile Include="TestItemColls\Camera\Web\OTA.cs" />
+    <Compile Include="TestItemColls\COMMON\Delay.cs" />
+    <Compile Include="TestItemColls\COMMON\DiskRW.cs" />
+    <Compile Include="TestItemColls\COMMON\MessageDialog.cs" />
+    <Compile Include="TestItemColls\COMMON\PictureMsgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestItemColls\COMMON\PictureMsgForm.designer.cs">
+      <DependentUpon>PictureMsgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestItemColls\TestData.cs" />
+    <Compile Include="TestItemColls\TestItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestItemColls\VISA\Throughput.cs" />
+    <Compile Include="TestItemColls\VISA\FindRsrc.cs" />
+    <Compile Include="TestItemColls\VISA\MeasCount.cs" />
+    <Compile Include="TestItemColls\VISA\MeasFreq.cs" />
+    <Compile Include="TestItemColls\VISA\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\MVAFW.dll" />
+    <Content Include="bin\Debug\MVAFW.pdb" />
+    <Content Include="dll\System.Data.SQLite.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SettingForm\ChannelSetting.resx">
+      <DependentUpon>ChannelSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm\TestItemSelection.resx">
+      <DependentUpon>TestItemSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestItemColls\Camera\Utility\UartLogForm.resx">
+      <DependentUpon>UartLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestItemColls\COMMON\PictureMsgForm.resx">
+      <DependentUpon>PictureMsgForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\..\MVAQCDVT\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\MVAQCDVT\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\..\MVAQCDVT\packages\Selenium.WebDriver.ChromeDriver.102.0.5005.6102\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\MVAQCDVT\packages\Selenium.WebDriver.ChromeDriver.102.0.5005.6102\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <Import Project="..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\MVAQCDVT\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\..\MVAQCDVT\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\..\MVAQCDVT\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Import Project="..\..\MVAQCDVT\packages\Selenium.WebDriver.ChromeDriver.102.0.5005.6102\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\..\MVAQCDVT\packages\Selenium.WebDriver.ChromeDriver.102.0.5005.6102\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
