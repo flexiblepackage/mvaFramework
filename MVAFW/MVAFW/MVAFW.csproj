@@ -233,7 +233,6 @@
     <Compile Include="API\Header\visa32.cs" />
     <Compile Include="API\MVAAndroidAPI\AndroidAPI.cs" />
     <Compile Include="API\MVAAndroidAPI\AndroidAPIMyQ.cs" />
-    <Compile Include="API\MVAAndroidAPI\AndroidAPITend.cs" />
     <Compile Include="API\MVAAndroidAPI\MVAMyQAPI\MyQAPIFalcon.cs" />
     <Compile Include="API\MVAAndroidAPI\MVAMyQAPI\MyQAPIWS.cs" />
     <Compile Include="API\MVADASKAPI.cs" />
